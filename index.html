@@ -378,6 +378,7 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
 </style>
 </head>
 <body>
+<div id="google_translate_element" style="display:none;"></div>
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- Top utility bar -->
@@ -424,9 +425,9 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
   <nav class="main-nav" aria-label="Primary">
     <div class="container">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html" aria-current="page" data-i18n="nav_home">Home</a></li>
         <li>
-          <a href="organizations_directory.html">Organizations <span class="caret">▾</span></a>
+          <a href="organizations_directory.html" data-i18n="nav_organizations">Organizations <span class="caret">▾</span></a>
           <ul class="nav-dropdown">
             <li><a href="organizations_directory.html">Presidential Secretariat</a></li>
             <li><a href="organizations_directory.html">Ministries</a></li>
@@ -435,7 +436,7 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
           </ul>
         </li>
         <li>
-          <a href="services_a_z.html">Services <span class="caret">▾</span></a>
+          <a href="services_a_z.html" data-i18n="nav_services">Services <span class="caret">▾</span></a>
           <ul class="nav-dropdown">
             <li><a href="services_a_z.html">Citizen Registrations</a></li>
             <li><a href="services_a_z.html">Banking, Tax &amp; Insurance</a></li>
@@ -443,10 +444,10 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
             <li><a href="services_a_z.html">Housing &amp; Utilities</a></li>
           </ul>
         </li>
-        <li><a href="services_a_z.html">A–Z Index</a></li>
-        <li><a href="gov_forms.html">Gov Forms</a></li>
-        <li><a href="#">Downloads</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li><a href="services_a_z.html" data-i18n="nav_az">A–Z Index</a></li>
+        <li><a href="gov_forms.html" data-i18n="nav_forms">Gov Forms</a></li>
+        <li><a href="#" data-i18n="nav_downloads">Downloads</a></li>
+        <li><a href="#" data-i18n="nav_gallery">Gallery</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Help</a></li>
       </ul>
@@ -474,24 +475,24 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <p class="eyebrow">Government Information Centre</p>
-        <h1>One counter for every <span class="accent-word">government service</span> in Sri Lanka</h1>
-        <p class="hero-lead">Find the right department, download the right form, and get a straight answer — in Sinhala, Tamil or English — without visiting an office in person.</p>
+        <p class="eyebrow" data-i18n="hero_eyebrow">Government Information Centre</p>
+        <h1 data-i18n="hero_title">One counter for every <span class="accent-word">government service</span> in Sri Lanka</h1>
+        <p class="hero-lead" data-i18n="hero_lead">Find the right department, download the right form, and get a straight answer — in Sinhala, Tamil or English — without visiting an office in person.</p>
         <div class="hero-cta">
-          <a href="#services" class="btn btn-accent">Browse services</a>
-          <a href="tel:1919" class="btn btn-outline">Call the 1919 hotline</a>
+          <a href="#services" class="btn btn-accent" data-i18n="btn_browse">Browse services</a>
+          <a href="tel:1919" class="btn btn-outline" data-i18n="btn_call">Call the 1919 hotline</a>
         </div>
       </div>
       <div class="hero-token">
         <div class="token-head">
-          <span>Today at the GIC</span>
+          <span data-i18n="today_gic">Today at the GIC</span>
           <span class="token-num">TOKEN A-042</span>
         </div>
         <div class="hero-stats">
-          <div class="stat"><b>190+</b><span>Government organizations linked</span></div>
-          <div class="stat"><b>600+</b><span>Citizen services described</span></div>
-          <div class="stat"><b>3</b><span>Official languages, always</span></div>
-          <div class="stat"><b>1919</b><span>Hotline, 7 days a week</span></div>
+          <div class="stat"><b>190+</b><span data-i18n="stat_orgs">Government organizations linked</span></div>
+          <div class="stat"><b>600+</b><span data-i18n="stat_services">Citizen services described</span></div>
+          <div class="stat"><b>3</b><span data-i18n="stat_lang">Official languages, always</span></div>
+          <div class="stat"><b>1919</b><span data-i18n="stat_hotline">Hotline, 7 days a week</span></div>
         </div>
       </div>
     </div>
@@ -758,13 +759,22 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
 // GIC Redesign — homepage interactions
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Language switch (visual state only in this prototype;
-  // production should route to /si/, /ta/, /en/ per ICTA 2.4)
+  // Language switch using Google Translate API
   const langButtons = document.querySelectorAll('.lang-switch button');
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       langButtons.forEach(b => b.setAttribute('aria-current', 'false'));
       btn.setAttribute('aria-current', 'true');
+      
+      let lang = 'en';
+      if (btn.innerText === 'සිංහල') lang = 'si';
+      if (btn.innerText === 'தமிழ்') lang = 'ta';
+      
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event('change'));
+      }
     });
   });
 
@@ -799,5 +809,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,si,ta', autoDisplay: false}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+/* Hide the Google Translate toolbar and banner */
+.skiptranslate iframe,
+.skiptranslate.goog-te-banner-frame { display: none !important; }
+body { top: 0px !important; }
+</style>
 </body>
 </html>

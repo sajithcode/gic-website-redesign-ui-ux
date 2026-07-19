@@ -228,10 +228,11 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
       <a href="https://www.gov.lk" target="_blank" rel="noopener">gov.lk Portal</a>
     </div>
     <div class="topbar-right">
+      <div id="google_translate_element" style="display:none;"></div>
       <div class="lang-switch" role="group" aria-label="Choose language">
-        <button aria-current="true">සිංහල</button>
-        <button aria-current="false">English</button>
-        <button aria-current="false">தமிழ்</button>
+        <button data-lang="si" aria-current="false">සිංහල</button>
+        <button data-lang="en" aria-current="true">English</button>
+        <button data-lang="ta" aria-current="false">தமிழ்</button>
       </div>
       <div class="a11y-controls" role="group" aria-label="Accessibility controls">
         <button id="a11y-size-up" title="Increase text size">A+</button>
@@ -504,5 +505,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // No JS needed for dropdown — pure CSS :hover handles it
 });
 </script>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'si,ta,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
