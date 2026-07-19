@@ -162,6 +162,18 @@ button { font-family: inherit; cursor: pointer; }
 }
 .nav-dropdown li a:hover { background: var(--paper-2); color: var(--primary); }
 
+
+/* --- Mobile Nav --- */
+.mobile-menu-btn { display: none; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.3); padding: 6px 12px; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+@media (max-width: 768px) {
+  .main-nav .container { justify-content: space-between; align-items: center; padding: 10px 24px; flex-wrap: wrap; }
+  .mobile-menu-btn { display: block; }
+  .main-nav > .container > ul { display: none; width: 100%; flex-direction: column; padding-top: 10px; }
+  .main-nav > .container > ul.mobile-open { display: flex; }
+  .nav-dropdown { position: static; box-shadow: none; min-width: 100%; padding: 0 10px; display: none; background: rgba(0,0,0,0.1); border-radius: 0; }
+  .main-nav > .container > ul > li > a { justify-content: space-between; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative; color: #fff; overflow: hidden;
@@ -424,6 +436,7 @@ body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-sof
 
   <nav class="main-nav" aria-label="Primary">
     <div class="container">
+      <button class="mobile-menu-btn" aria-label="Toggle navigation">☰ Menu</button>
       <ul>
         <li><a href="index.html" aria-current="page" data-i18n="nav_home">Home</a></li>
         <li>
@@ -798,6 +811,16 @@ document.addEventListener('DOMContentLoaded', () => {
   contrastToggle?.addEventListener('click', () => {
     body.classList.toggle('a11y-high-contrast');
   });
+
+
+  // Mobile Nav Toggle
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const mainNavUl = document.querySelector('.main-nav > .container > ul');
+  if (mobileBtn && mainNavUl) {
+    mobileBtn.addEventListener('click', () => {
+      mainNavUl.classList.toggle('mobile-open');
+    });
+  }
 
   // No JS needed for dropdown — pure CSS :hover handles it
 
