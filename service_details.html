@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issuance of National Identity Card for the First Time | GIC | Sri Lanka</title>
+<meta name="description" content="Information on how to apply for a Sri Lankan National Identity Card (NIC) for the first time upon reaching 15 years of age.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1A2430; --ink-soft: #4B5768;
+  --primary: #0E3A5F; --primary-dark: #092A46;
+  --accent: #C98A2C; --teal: #0F6B5C;
+  --paper: #F7F5F0; --paper-2: #EFEBE1; --white: #FFFFFF;
+  --line: #DCD5C4; --focus: #1E6FD9;
+  --radius-s: 6px; --radius-m: 12px; --radius-l: 20px;
+  --shadow-s: 0 1px 2px rgba(20,25,35,.06), 0 1px 1px rgba(20,25,35,.04);
+  --font-display: "Poppins", "Noto Sans Sinhala", "Noto Sans Tamil", sans-serif;
+  --font-body: "Poppins", "Noto Sans Sinhala", "Noto Sans Tamil", -apple-system, sans-serif;
+  --container: 1000px; /* Slightly narrower container for reading */
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--primary); text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; }
+h1, h2, h3, h4 { font-family: var(--font-display); margin: 0 0 .4em; font-weight: 600; line-height: 1.2; color: var(--primary); }
+p { margin: 0 0 1.2em; }
+ul { margin: 0 0 1.2em 0; padding-left: 20px; }
+li { margin-bottom: 6px; }
+button { font-family: inherit; cursor: pointer; }
+.container { max-width: var(--container); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--primary); color: #fff; padding: 12px 20px; z-index: 200; }
+.skip-link:focus { left: 0; }
+
+/* Basic Topbar/Header styles (Simplified for space, same classes as others) */
+.topbar { background: var(--primary-dark); color: #D9E4EE; font-size: .8rem; padding: 8px 0; }
+.topbar .container { display: flex; justify-content: space-between; }
+.site-header { background: var(--white); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-s); padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.emblem { width: 44px; height: 44px; border-radius: 50%; background: conic-gradient(from 210deg, var(--accent), var(--primary), var(--teal), var(--accent)); display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: .8rem; }
+.brand-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+
+/* ---------- Page Layout ---------- */
+.breadcrumb { font-size: .85rem; margin: 32px 0 16px; color: var(--ink-soft); }
+.breadcrumb a { color: var(--ink-soft); }
+.service-header { margin-bottom: 40px; }
+.service-header h1 { font-size: 2.4rem; margin-bottom: 12px; }
+.service-meta { display: inline-flex; align-items: center; gap: 8px; background: var(--paper-2); padding: 6px 14px; border-radius: 999px; font-size: .85rem; font-weight: 600; color: var(--ink-soft); }
+.service-meta a { color: inherit; }
+
+.content-grid { display: grid; grid-template-columns: 1fr 320px; gap: 48px; padding-bottom: 80px; }
+
+/* Main Content Area */
+.service-body { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-m); padding: 40px; box-shadow: var(--shadow-s); }
+.service-body h2 { font-size: 1.5rem; margin-top: 32px; border-bottom: 2px solid var(--paper-2); padding-bottom: 8px; }
+.service-body h2:first-child { margin-top: 0; }
+.service-body h3 { font-size: 1.1rem; margin-top: 24px; color: var(--ink); }
+
+.step-list { counter-reset: steps; list-style: none; padding: 0; margin-top: 24px; }
+.step-list > li { position: relative; padding-left: 48px; margin-bottom: 24px; }
+.step-list > li::before { counter-increment: steps; content: counter(steps); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .9rem; }
+
+.info-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .95rem; }
+.info-table th, .info-table td { border: 1px solid var(--line); padding: 12px 16px; text-align: left; }
+.info-table th { background: var(--paper-2); font-weight: 600; width: 35%; }
+
+.callout { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 16px 20px; border-radius: 0 var(--radius-s) var(--radius-s) 0; margin: 24px 0; font-size: .95rem; }
+.callout strong { color: var(--primary-dark); display: block; margin-bottom: 4px; }
+
+/* Sidebar */
+.service-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 100px; }
+.action-card { background: var(--primary); color: #fff; border-radius: var(--radius-m); padding: 24px; text-align: center; }
+.action-card h3 { color: #fff; font-size: 1.2rem; margin-bottom: 12px; }
+.btn-primary-alt { display: inline-block; width: 100%; background: var(--accent); color: var(--primary-dark); font-weight: 700; padding: 12px; border-radius: var(--radius-s); margin-bottom: 12px; transition: transform .1s; }
+.btn-primary-alt:hover { transform: translateY(-2px); text-decoration: none; }
+.btn-outline-light { display: inline-block; width: 100%; border: 1px solid rgba(255,255,255,.4); color: #fff; font-weight: 600; padding: 12px; border-radius: var(--radius-s); transition: background .1s; }
+.btn-outline-light:hover { background: rgba(255,255,255,.1); text-decoration: none; }
+
+.contact-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-m); padding: 24px; font-size: .9rem; }
+.contact-card h3 { font-size: 1.1rem; margin-bottom: 16px; }
+.contact-card hr { border: none; border-top: 1px solid var(--line); margin: 16px 0; }
+.contact-row { display: flex; gap: 12px; margin-bottom: 12px; color: var(--ink-soft); }
+.contact-icon { font-size: 1.2rem; flex: none; }
+
+@media (max-width: 860px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .service-sidebar { position: static; order: -1; margin-bottom: 24px; }
+  .service-body { padding: 24px; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+  <div class="container">
+    <span>☎ Hotline 1919</span>
+    <span style="display:flex;gap:12px;"><a href="#">සිංහල</a><a href="#" style="font-weight:bold;color:#fff;">English</a><a href="#">தமிழ்</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container brand">
+    <a href="index.html" style="display:flex; align-items:center; gap:14px; color:inherit; text-decoration:none;">
+      <img src="assests/crest.png" alt="GIC Crest" class="brand-logo" width="52" height="60" style="object-fit: contain;">
+      <div class="brand-name">Government Information Centre</div>
+    </a>
+  </div>
+</header>
+
+<main id="main" class="container">
+  
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo;
+    <a href="services_a_z.html">Services A-Z</a> &rsaquo;
+    <a href="organizations_directory.html">Department for Registration of Persons</a> &rsaquo;
+    <span aria-current="page">Issuance of National Identity Card (First Time)</span>
+  </nav>
+
+  <header class="service-header">
+    <div class="service-meta">
+      <span aria-hidden="true">🏢</span>
+      <a href="organizations_directory.html">Department for Registration of Persons (DRP)</a>
+    </div>
+    <h1>Issuance of National Identity Card for the First Time</h1>
+  </header>
+
+  <div class="content-grid">
+    
+    <article class="service-body">
+      <p class="lead" style="font-size: 1.1rem; color: var(--ink-soft);">Every citizen of Sri Lanka who has reached 15 years of age is required by law to register and obtain a National Identity Card (NIC). The application process is typically facilitated through schools or the Grama Niladhari.</p>
+
+      <h2>Eligibility</h2>
+      <ul>
+        <li>Must be a citizen of Sri Lanka.</li>
+        <li>Must have completed 15 years of age.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Note for School Students (O/L Examination)</strong>
+        Students preparing for the G.C.E. Ordinary Level examination must apply for their NIC through their school Principal. The Department of Examinations requires a valid NIC to sit for the exam.
+      </div>
+
+      <h2>Application Process</h2>
+      <ol class="step-list">
+        <li>
+          <h3>Obtain the Application Form</h3>
+          <p>Obtain <strong>Form DRP/V/01/01/01</strong> (for age 15+) from your Grama Niladhari, Estate Superintendent (if living in an estate), or School Principal.</p>
+        </li>
+        <li>
+          <h3>Complete Form and Gather Documents</h3>
+          <p>Fill the form accurately and attach the required supporting documents (see below). You will need photographs meeting DRP specifications.</p>
+        </li>
+        <li>
+          <h3>Certify the Application</h3>
+          <p>The application must be certified by the Grama Niladhari (countersigned by the Divisional Secretary) OR the School Principal OR the Estate Superintendent.</p>
+        </li>
+        <li>
+          <h3>Submit Application</h3>
+          <p>Hand over the certified application to the certifying officer, who will forward it to the Department for Registration of Persons through the Divisional Secretariat.</p>
+        </li>
+      </ol>
+
+      <h2>Required Documents</h2>
+      <ul>
+        <li>Completed application form (DRP/V/01/01/01).</li>
+        <li>Original Birth Certificate or an Extract of the Birth Certificate.</li>
+        <li>Six (06) color photographs (Size: 1 3/8" x 7/8") with a light blue background, taken within the last 3 months by a registered studio.</li>
+        <li>Stamps to the value of Rs. 100.00 (affixed to the application).</li>
+        <li><em>If seeking to include a profession:</em> Original certificate establishing the profession (e.g., Degree certificate, appointment letter).</li>
+      </ul>
+
+      <h2>Fees and Timelines</h2>
+      <table class="info-table">
+        <tbody>
+          <tr>
+            <th scope="row">Application Fee</th>
+            <td>Rs. 100.00 (paid via stamps affixed to the form)</td>
+          </tr>
+          <tr>
+            <th scope="row">One-Day Service Fee</th>
+            <td>Rs. 1,000.00 (Optional, available at DRP Head Office only)</td>
+          </tr>
+          <tr>
+            <th scope="row">Normal Processing Time</th>
+            <td>Approximately 2 to 4 weeks via Divisional Secretariat.</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <aside class="service-sidebar">
+      <div class="action-card">
+        <h3>Ready to apply?</h3>
+        <p style="font-size:.9rem; margin-bottom: 20px;">Download the application form or read the photo guidelines.</p>
+        <a href="#" class="btn-primary-alt">Download Form (PDF)</a>
+        <a href="#" class="btn-outline-light">Photo Guidelines</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Provided By</h3>
+        <div class="contact-row">
+          <div class="contact-icon">🏢</div>
+          <div><strong>Department for Registration of Persons</strong></div>
+        </div>
+        <hr>
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>"Suhurupaya", Subhuthipura Road, Battaramulla.</div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">☎</div>
+          <div>011 2 862 238<br><span style="font-size:.8rem;color:var(--ink-soft);">Weekdays 8:30 AM - 4:15 PM</span></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🌐</div>
+          <div><a href="http://www.drp.gov.lk">www.drp.gov.lk</a></div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+</body>
+</html>

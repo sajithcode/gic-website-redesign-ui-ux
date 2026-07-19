@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services A-Z Index | Government Information Centre | Sri Lanka</title>
+<meta name="description" content="An alphabetical index of all government services provided to citizens of Sri Lanka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   Government Information Centre — Design System
+   ============================================================ */
+
+:root {
+  --ink: #1A2430;
+  --ink-soft: #4B5768;
+  --primary: #0E3A5F;
+  --primary-dark: #092A46;
+  --accent: #C98A2C;
+  --teal: #0F6B5C;
+  --paper: #F7F5F0;
+  --paper-2: #EFEBE1;
+  --white: #FFFFFF;
+  --line: #DCD5C4;
+  --focus: #1E6FD9;
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --shadow-s: 0 1px 2px rgba(20,25,35,.06), 0 1px 1px rgba(20,25,35,.04);
+
+  --font-display: "Poppins", "Noto Sans Sinhala", "Noto Sans Tamil", sans-serif;
+  --font-body: "Poppins", "Noto Sans Sinhala", "Noto Sans Tamil", -apple-system, sans-serif;
+
+  --container: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--paper); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); margin: 0 0 .4em; font-weight: 600; line-height: 1.15; }
+p { margin: 0 0 1em; }
+ul { margin: 0; padding: 0; list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.container { max-width: var(--container); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--primary); color: #fff; padding: 12px 20px; z-index: 200; border-radius: 0 0 8px 0; }
+.skip-link:focus { left: 0; }
+
+/* ---------- Top utility bar ---------- */
+.topbar { background: var(--primary-dark); color: #D9E4EE; font-size: .8rem; }
+.topbar .container { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.topbar-left { display: flex; gap: 20px; flex-wrap: wrap; }
+.topbar a:hover { color: #fff; text-decoration: underline; }
+.topbar-right { display: flex; align-items: center; gap: 14px; }
+.lang-switch { display: flex; gap: 2px; background: rgba(255,255,255,.08); border-radius: 999px; padding: 2px; }
+.lang-switch button { background: none; border: none; color: #D9E4EE; padding: 4px 10px; border-radius: 999px; font-size: .75rem; }
+.lang-switch button[aria-current="true"] { background: var(--accent); color: var(--primary-dark); font-weight: 700; }
+.a11y-controls { display: flex; gap: 4px; align-items: center; border-left: 1px solid rgba(255,255,255,.2); padding-left: 14px; }
+.a11y-controls button { background: rgba(255,255,255,.08); border: none; color: #fff; width: 26px; height: 26px; border-radius: 6px; font-size: .75rem; }
+.a11y-controls button:hover { background: var(--accent); color: var(--primary-dark); }
+
+/* ---------- Header / nav ---------- */
+.site-header { background: var(--white); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-s); }
+.brand-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.emblem { width: 52px; height: 52px; border-radius: 50%; background: conic-gradient(from 210deg, var(--accent), var(--primary), var(--teal), var(--accent)); display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: .95rem; flex: none; }
+.brand-text .brand-name { font-family: var(--font-display); font-size: 1.28rem; font-weight: 700; color: var(--primary); }
+.brand-text .brand-sub { font-size: .78rem; color: var(--ink-soft); }
+.header-search { display: flex; align-items: center; gap: 0; flex: 1; max-width: 380px; }
+.header-search input { flex: 1; border: 1px solid var(--line); border-right: none; border-radius: 999px 0 0 999px; padding: 9px 16px; font-size: .9rem; background: var(--paper); }
+.header-search button { border: 1px solid var(--primary); background: var(--primary); color: #fff; padding: 9px 16px; border-radius: 0 999px 999px 0; font-weight: 600; font-size: .85rem; }
+
+/* --- Main Nav --- */
+.main-nav { background: var(--primary); }
+.main-nav .container { display: flex; }
+.main-nav > .container > ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+.main-nav > .container > ul > li { position: relative; }
+.main-nav > .container > ul > li > a {
+  display: flex; align-items: center; gap: 6px; color: #fff; padding: 13px 18px;
+  font-size: .9rem; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer;
+}
+.main-nav > .container > ul > li:hover > a,
+.main-nav > .container > ul > li > a[aria-current="page"] {
+  background: var(--primary-dark);
+}
+.main-nav .caret { font-size: .65rem; opacity: .75; }
+
+/* --- Dropdown Panel --- */
+.nav-dropdown {
+  display: none; position: absolute; top: 100%; left: 0; background: #fff;
+  min-width: 240px; box-shadow: var(--shadow-l); border-radius: 0 0 10px 10px;
+  padding: 8px; z-index: 100; list-style: none; margin: 0;
+}
+.main-nav > .container > ul > li:hover > .nav-dropdown { display: block; }
+.nav-dropdown li a {
+  display: block; color: var(--ink); padding: 10px 14px; border-radius: 8px;
+  font-weight: 500; font-size: .88rem; text-decoration: none;
+}
+.nav-dropdown li a:hover { background: var(--paper-2); color: var(--primary); }
+
+/* ---------- Page Header ---------- */
+.page-header { background: var(--primary); color: #fff; padding: 48px 0; }
+.page-header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+.breadcrumb { display: flex; gap: 8px; font-size: .85rem; margin-bottom: 24px; color: #9FB3C6; }
+.breadcrumb a { color: #D9E4EE; }
+.breadcrumb a:hover { color: #fff; text-decoration: underline; }
+
+/* ---------- A-Z Index Layout ---------- */
+.page-layout { padding: 48px 0 80px; }
+.az-nav { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-m); padding: 16px; margin-bottom: 40px; position: sticky; top: 80px; z-index: 10; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; box-shadow: var(--shadow-s); }
+.az-nav a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 6px; font-size: 1rem; font-weight: 600; color: var(--primary); transition: all .2s ease; }
+.az-nav a:hover { background: var(--paper-2); }
+.az-nav a.active { background: var(--primary); color: #fff; }
+.az-nav a.disabled { color: var(--line); pointer-events: none; }
+
+.index-section { margin-bottom: 48px; display: grid; grid-template-columns: 80px 1fr; gap: 24px; }
+.index-letter { font-family: var(--font-display); font-size: 3rem; color: var(--accent); font-weight: 700; line-height: 1; border-right: 2px solid var(--line); padding-right: 24px; text-align: right; }
+.index-list { columns: 2; column-gap: 40px; }
+.index-list li { margin-bottom: 12px; break-inside: avoid; }
+.index-list a { font-size: .95rem; font-weight: 500; color: var(--primary); display: inline-block; }
+.index-list a:hover { color: var(--teal); text-decoration: underline; }
+.index-list .org-name { display: block; font-size: .8rem; color: var(--ink-soft); margin-top: 2px; font-weight: 400; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--primary-dark); color: #C7D5E3; padding-top: 56px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px; padding-bottom: 36px; }
+.footer-brand .brand-name { color: #fff; font-family: var(--font-display); font-size: 1.2rem; }
+.footer-brand p { font-size: .85rem; color: #9FB3C6; margin-top: 10px; }
+.footer-col h4 { color: #fff; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px; }
+.footer-col li { margin-bottom: 9px; font-size: .86rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding: 18px 0; font-size: .78rem; color: #8FA3B8; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 768px) {
+  .index-section { grid-template-columns: 1fr; gap: 16px; }
+  .index-letter { border-right: none; border-bottom: 2px solid var(--line); padding-right: 0; padding-bottom: 8px; text-align: left; font-size: 2.2rem; }
+  .index-list { columns: 1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .header-search { display: none; }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="tel:1919">☎ Hotline 1919</a>
+      <a href="mailto:info@gic.gov.lk">✉ info@gic.gov.lk</a>
+    </div>
+    <div class="topbar-right">
+      <div class="lang-switch" role="group">
+        <button aria-current="true">සිංහල</button>
+        <button aria-current="false">English</button>
+        <button aria-current="false">தமிழ்</button>
+      </div>
+      <div class="a11y-controls" role="group">
+        <button id="a11y-size-up">A+</button>
+        <button id="a11y-size-up-more">A++</button>
+        <button id="a11y-size-reset">A</button>
+        <button id="a11y-contrast">◐</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container brand-row">
+    <a href="index.html" class="brand" style="text-decoration: none;">
+        <img src="assests/crest.png" alt="GIC Crest" class="brand-logo" width="52" height="60" style="object-fit: contain;">
+      <div class="brand-text">
+        <div class="brand-name">Government Information Centre</div>
+        <div class="brand-sub">රාජ්‍ය තොරතුරු කේන්ද්‍රය · அரசாங்க தகவல் நிலையம்</div>
+      </div>
+    </a>
+    <form class="header-search" role="search">
+      <label class="visually-hidden" for="site-search">Search government services</label>
+      <input id="site-search" type="search" placeholder="Search services…">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <nav class="main-nav" aria-label="Primary">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="organizations_directory.html">Organizations <span class="caret">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="organizations_directory.html">Presidential Secretariat</a></li>
+            <li><a href="organizations_directory.html">Ministries</a></li>
+            <li><a href="organizations_directory.html">Departments</a></li>
+            <li><a href="organizations_directory.html">Provincial Councils</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="services_a_z.html">Services <span class="caret">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="services_a_z.html">Citizen Registrations</a></li>
+            <li><a href="services_a_z.html">Banking, Tax &amp; Insurance</a></li>
+            <li><a href="services_a_z.html">Health &amp; Social Services</a></li>
+            <li><a href="services_a_z.html">Housing &amp; Utilities</a></li>
+          </ul>
+        </li>
+        <li><a href="services_a_z.html" aria-current="page">A–Z Index</a></li>
+        <li><a href="gov_forms.html">Gov Forms</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <header class="page-header">
+    <div class="container">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo;
+        <span aria-current="page">Services A-Z</span>
+      </nav>
+      <h1>A-Z Index of Services</h1>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    
+    <nav class="az-nav" aria-label="Alphabetical navigation">
+      <a href="#A" class="active">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a><a href="#F">F</a><a href="#G">G</a><a href="#H">H</a><a href="#I">I</a><a href="#J" class="disabled">J</a><a href="#K" class="disabled">K</a><a href="#L">L</a><a href="#M">M</a><a href="#N">N</a><a href="#O">O</a><a href="#P">P</a><a href="#Q" class="disabled">Q</a><a href="#R">R</a><a href="#S">S</a><a href="#T">T</a><a href="#U" class="disabled">U</a><a href="#V">V</a><a href="#W">W</a><a href="#X" class="disabled">X</a><a href="#Y" class="disabled">Y</a><a href="#Z" class="disabled">Z</a>
+    </nav>
+
+    <div class="index-sections">
+      
+      <section id="A" class="index-section">
+        <div class="index-letter" aria-hidden="true">A</div>
+        <ul class="index-list">
+          <li><a href="#">Adoption of Children <span class="org-name">Department of Probation and Child Care Services</span></a></li>
+          <li><a href="#">Agricultural Equipment Subsidy <span class="org-name">Department of Agriculture</span></a></li>
+          <li><a href="#">Alienation of Crown Land <span class="org-name">Land Commissioner General's Department</span></a></li>
+          <li><a href="service_details.html">Application for a National Identity Card <span class="org-name">Department for Registration of Persons</span></a></li>
+          <li><a href="#">Application for a Passport <span class="org-name">Department of Immigration & Emigration</span></a></li>
+          <li><a href="#">Approval of Building Plans <span class="org-name">Urban Development Authority</span></a></li>
+          <li><a href="#">Ayurvedic Medical Council Registration <span class="org-name">Department of Ayurveda</span></a></li>
+        </ul>
+      </section>
+
+      <section id="B" class="index-section">
+        <div class="index-letter" aria-hidden="true">B</div>
+        <ul class="index-list">
+          <li><a href="#">Birth Certificate (Applying for a Copy) <span class="org-name">Registrar General's Department</span></a></li>
+          <li><a href="#">Business Name Registration <span class="org-name">Department of Registrar of Companies</span></a></li>
+          <li><a href="#">Bursary Applications for University Students <span class="org-name">University Grants Commission</span></a></li>
+        </ul>
+      </section>
+
+      <section id="C" class="index-section">
+        <div class="index-letter" aria-hidden="true">C</div>
+        <ul class="index-list">
+          <li><a href="#">Change of Name (Deed Poll) <span class="org-name">Registrar General's Department</span></a></li>
+          <li><a href="#">Citizenship Certificates <span class="org-name">Department of Immigration & Emigration</span></a></li>
+          <li><a href="#">Company Registration <span class="org-name">Department of Registrar of Companies</span></a></li>
+          <li><a href="#">Consumer Complaints <span class="org-name">Consumer Affairs Authority</span></a></li>
+          <li><a href="#">Customs Clearance for Imports <span class="org-name">Sri Lanka Customs</span></a></li>
+        </ul>
+      </section>
+      
+      <section id="D" class="index-section">
+        <div class="index-letter" aria-hidden="true">D</div>
+        <ul class="index-list">
+          <li><a href="#">Death Certificate (Applying for a Copy) <span class="org-name">Registrar General's Department</span></a></li>
+          <li><a href="#">Driving Licence (New / Renewal) <span class="org-name">Department of Motor Traffic</span></a></li>
+          <li><a href="#">Dual Citizenship <span class="org-name">Department of Immigration & Emigration</span></a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">Government Information Centre</div>
+      <p>The citizen's single point of contact for Sri Lankan government information and services.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="organizations_directory.html">Organizations</a></li><li><a href="services_a_z.html">Services</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help</a></li><li><a href="#">Contact us</a></li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Government Information Centre, Sri Lanka.</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Simple A-Z smooth scroll and active state
+  const azLinks = document.querySelectorAll('.az-nav a:not(.disabled)');
+  azLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      azLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+  
+  // Shared interactions (a11y, lang)
+  const body = document.body;
+  document.getElementById('a11y-size-up')?.addEventListener('click', () => { body.classList.remove('a11y-larger-text'); body.classList.toggle('a11y-large-text'); });
+  document.getElementById('a11y-size-reset')?.addEventListener('click', () => { body.classList.remove('a11y-large-text', 'a11y-larger-text'); });
+  document.getElementById('a11y-contrast')?.addEventListener('click', () => { body.classList.toggle('a11y-high-contrast'); });
+
+  // No JS needed for dropdown — pure CSS :hover handles it
+});
+</script>
+</body>
+</html>

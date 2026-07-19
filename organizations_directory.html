@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organizations | Government Information Centre | Sri Lanka</title>
+<meta name="description" content="Browse a directory of Sri Lankan government ministries, departments, and provincial councils available through the Government Information Centre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   Government Information Centre — Design System
+   Palette:  --ink #1A2430  --primary #0E3A5F  --accent #C98A2C
+             --teal #0F6B5C  --paper #F7F5F0  --paper-2 #EFEBE1
+   ============================================================ */
+
+:root {
+  --ink: #1A2430;
+  --ink-soft: #4B5768;
+  --primary: #0E3A5F;
+  --primary-dark: #092A46;
+  --accent: #C98A2C;
+  --accent-soft: #F1DDB4;
+  --teal: #0F6B5C;
+  --paper: #F7F5F0;
+  --paper-2: #EFEBE1;
+  --white: #FFFFFF;
+  --line: #DCD5C4;
+  --focus: #1E6FD9;
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --shadow-s: 0 1px 2px rgba(20,25,35,.06), 0 1px 1px rgba(20,25,35,.04);
+  --shadow-m: 0 8px 24px rgba(14,58,95,.10);
+  --shadow-l: 0 20px 48px rgba(14,58,95,.16);
+
+  --font-display: "Poppins", "Noto Sans Sinhala", "Noto Sans Tamil", sans-serif;
+  --font-body: "Poppins", "Noto Sans Sinhala", "Noto Sans Tamil", -apple-system, sans-serif;
+
+  --container: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); margin: 0 0 .4em; font-weight: 600; line-height: 1.15; }
+p { margin: 0 0 1em; }
+ul { margin: 0; padding: 0; list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.container { max-width: var(--container); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.skip-link {
+  position: absolute; left: -999px; top: 0; background: var(--primary); color: #fff;
+  padding: 12px 20px; z-index: 200; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- Top utility bar ---------- */
+.topbar { background: var(--primary-dark); color: #D9E4EE; font-size: .8rem; }
+.topbar .container { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.topbar-left { display: flex; gap: 20px; flex-wrap: wrap; }
+.topbar a { color: #D9E4EE; }
+.topbar a:hover { color: #fff; text-decoration: underline; }
+.topbar-right { display: flex; align-items: center; gap: 14px; }
+.lang-switch { display: flex; gap: 2px; background: rgba(255,255,255,.08); border-radius: 999px; padding: 2px; }
+.lang-switch button { background: none; border: none; color: #D9E4EE; padding: 4px 10px; border-radius: 999px; font-size: .75rem; }
+.lang-switch button[aria-current="true"] { background: var(--accent); color: var(--primary-dark); font-weight: 700; }
+.a11y-controls { display: flex; gap: 4px; align-items: center; border-left: 1px solid rgba(255,255,255,.2); padding-left: 14px; }
+.a11y-controls button { background: rgba(255,255,255,.08); border: none; color: #fff; width: 26px; height: 26px; border-radius: 6px; font-size: .75rem; }
+.a11y-controls button:hover { background: var(--accent); color: var(--primary-dark); }
+
+/* ---------- Header / nav ---------- */
+.site-header { background: var(--white); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-s); }
+.brand-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.emblem { width: 52px; height: 52px; border-radius: 50%; background: conic-gradient(from 210deg, var(--accent), var(--primary), var(--teal), var(--accent)); display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: .95rem; flex: none; }
+.brand-text .brand-name { font-family: var(--font-display); font-size: 1.28rem; font-weight: 700; color: var(--primary); }
+.brand-text .brand-sub { font-size: .78rem; color: var(--ink-soft); }
+.header-search { display: flex; align-items: center; gap: 0; flex: 1; max-width: 380px; }
+.header-search input { flex: 1; border: 1px solid var(--line); border-right: none; border-radius: 999px 0 0 999px; padding: 9px 16px; font-size: .9rem; background: var(--paper); }
+.header-search button { border: 1px solid var(--primary); background: var(--primary); color: #fff; padding: 9px 16px; border-radius: 0 999px 999px 0; font-weight: 600; font-size: .85rem; }
+
+/* --- Main Nav --- */
+.main-nav { background: var(--primary); }
+.main-nav .container { display: flex; }
+.main-nav > .container > ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+.main-nav > .container > ul > li { position: relative; }
+.main-nav > .container > ul > li > a {
+  display: flex; align-items: center; gap: 6px; color: #fff; padding: 13px 18px;
+  font-size: .9rem; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer;
+}
+.main-nav > .container > ul > li:hover > a,
+.main-nav > .container > ul > li > a[aria-current="page"] {
+  background: var(--primary-dark);
+}
+.main-nav .caret { font-size: .65rem; opacity: .75; }
+
+/* --- Dropdown Panel --- */
+.nav-dropdown {
+  display: none; position: absolute; top: 100%; left: 0; background: #fff;
+  min-width: 240px; box-shadow: var(--shadow-l); border-radius: 0 0 10px 10px;
+  padding: 8px; z-index: 100; list-style: none; margin: 0;
+}
+.main-nav > .container > ul > li:hover > .nav-dropdown { display: block; }
+.nav-dropdown li a {
+  display: block; color: var(--ink); padding: 10px 14px; border-radius: 8px;
+  font-weight: 500; font-size: .88rem; text-decoration: none;
+}
+.nav-dropdown li a:hover { background: var(--paper-2); color: var(--primary); }
+
+/* ---------- Page Header ---------- */
+.page-header { background: var(--primary); color: #fff; padding: 48px 0; }
+.page-header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+.page-header p { font-size: 1.1rem; color: #D9E4EE; max-width: 600px; margin: 0; }
+.breadcrumb { display: flex; gap: 8px; font-size: .85rem; margin-bottom: 24px; color: #9FB3C6; }
+.breadcrumb a { color: #D9E4EE; }
+.breadcrumb a:hover { color: #fff; text-decoration: underline; }
+
+/* ---------- Page Content ---------- */
+.page-layout { display: grid; grid-template-columns: 280px 1fr; gap: 40px; padding: 48px 0 80px; }
+
+/* Sidebar / Filters */
+.sidebar { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-m); padding: 24px; position: sticky; top: 140px; }
+.sidebar h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 16px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.filter-group { margin-bottom: 24px; }
+.filter-group:last-child { margin-bottom: 0; }
+.filter-label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: 8px; color: var(--ink); }
+.filter-options { display: flex; flex-direction: column; gap: 8px; }
+.filter-options label { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--ink-soft); cursor: pointer; }
+.filter-options input[type="checkbox"], .filter-options input[type="radio"] { accent-color: var(--primary); cursor: pointer; }
+.search-box { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius-s); font-size: .9rem; margin-bottom: 24px; background: var(--paper); }
+
+/* Content Area */
+.content-area h2 { font-size: 1.6rem; color: var(--primary); margin-bottom: 24px; }
+.alpha-index { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 32px; }
+.alpha-index a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #fff; border: 1px solid var(--line); border-radius: 4px; font-size: .85rem; font-weight: 600; color: var(--primary); transition: all .2s ease; }
+.alpha-index a:hover, .alpha-index a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.org-list { display: flex; flex-direction: column; gap: 16px; }
+.org-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-m); padding: 24px; box-shadow: var(--shadow-s); transition: transform .2s ease, box-shadow .2s ease; }
+.org-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-m); }
+.org-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
+.org-card-header h3 { font-size: 1.25rem; color: var(--primary); margin: 0; }
+.org-type-badge { display: inline-block; padding: 4px 10px; background: var(--paper-2); color: var(--ink-soft); font-size: .75rem; font-weight: 600; border-radius: 999px; text-transform: uppercase; letter-spacing: .05em; flex: none; }
+.org-card p { font-size: .9rem; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.5; }
+.org-meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: .85rem; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: 16px; }
+.org-meta div { display: flex; align-items: center; gap: 6px; }
+.org-actions { margin-top: 16px; display: flex; gap: 12px; }
+.btn-small { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: .85rem; border: 1px solid var(--primary); color: var(--primary); background: transparent; transition: all .15s ease; }
+.btn-small:hover { background: var(--primary); color: #fff; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--primary-dark); color: #C7D5E3; padding-top: 56px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px; padding-bottom: 36px; }
+.footer-brand .brand-name { color: #fff; font-family: var(--font-display); font-size: 1.2rem; }
+.footer-brand p { font-size: .85rem; color: #9FB3C6; margin-top: 10px; }
+.footer-col h4 { color: #fff; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px; }
+.footer-col li { margin-bottom: 9px; font-size: .86rem; }
+.footer-col a:hover { color: #fff; text-decoration: underline; }
+.footer-social { display: flex; gap: 10px; margin-top: 14px; }
+.footer-social a { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; font-size: .8rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding: 18px 0; font-size: .78rem; color: #8FA3B8; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.footer-bottom a { color: #8FA3B8; }
+.footer-bottom a:hover { color: #fff; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .page-layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; margin-bottom: 32px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .header-search { display: none; }
+}
+@media (max-width: 640px) {
+  .main-nav .container { overflow-x: auto; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .org-card-header { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* Accessibility utility states toggled by JS */
+body.a11y-large-text { font-size: 112%; }
+body.a11y-larger-text { font-size: 124%; }
+body.a11y-high-contrast { --paper: #fff; --paper-2: #fff; --ink: #000; --ink-soft: #111; --line: #000; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="tel:1919">☎ Hotline 1919</a>
+      <a href="mailto:info@gic.gov.lk">✉ info@gic.gov.lk</a>
+      <a href="https://www.gov.lk" target="_blank" rel="noopener">gov.lk Portal</a>
+    </div>
+    <div class="topbar-right">
+      <div class="lang-switch" role="group" aria-label="Choose language">
+        <button aria-current="true">සිංහල</button>
+        <button aria-current="false">English</button>
+        <button aria-current="false">தமிழ்</button>
+      </div>
+      <div class="a11y-controls" role="group" aria-label="Accessibility controls">
+        <button id="a11y-size-up" title="Increase text size">A+</button>
+        <button id="a11y-size-up-more" title="Increase text size more">A++</button>
+        <button id="a11y-size-reset" title="Reset text size">A</button>
+        <button id="a11y-contrast" title="Toggle high contrast">◐</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container brand-row">
+    <div class="brand">
+      <a href="index.html" class="brand" style="text-decoration: none;">
+        <img src="assests/crest.png" alt="GIC Crest" class="brand-logo" width="52" height="60" style="object-fit: contain;">
+        <div class="brand-text">
+          <div class="brand-name">Government Information Centre</div>
+          <div class="brand-sub">රාජ්‍ය තොරතුරු කේන්ද්‍රය · அரசாங்க தகவல் நிலையம்</div>
+        </div>
+      </a>
+    </div>
+    <form class="header-search" role="search">
+      <label class="visually-hidden" for="site-search">Search government services</label>
+      <input id="site-search" type="search" placeholder="Search services, forms, organizations…">
+      <button type="submit" aria-label="Search">Search</button>
+    </form>
+  </div>
+
+  <nav class="main-nav" aria-label="Primary">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="organizations_directory.html" aria-current="page">Organizations <span class="caret">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="organizations_directory.html">Presidential Secretariat</a></li>
+            <li><a href="organizations_directory.html">Ministries</a></li>
+            <li><a href="organizations_directory.html">Departments</a></li>
+            <li><a href="organizations_directory.html">Provincial Councils</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="services_a_z.html">Services <span class="caret">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="services_a_z.html">Citizen Registrations</a></li>
+            <li><a href="services_a_z.html">Banking, Tax &amp; Insurance</a></li>
+            <li><a href="services_a_z.html">Health &amp; Social Services</a></li>
+            <li><a href="services_a_z.html">Housing &amp; Utilities</a></li>
+          </ul>
+        </li>
+        <li><a href="services_a_z.html">A–Z Index</a></li>
+        <li><a href="gov_forms.html">Gov Forms</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <header class="page-header">
+    <div class="container">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo;
+        <span aria-current="page">Organizations</span>
+      </nav>
+      <h1>Organizations Directory</h1>
+      <p>Find contact details, affiliated services, and information for over 190 government ministries, departments, statutory boards, and provincial councils.</p>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <aside class="sidebar">
+      <label for="org-search" class="visually-hidden">Search Organizations</label>
+      <input type="search" id="org-search" class="search-box" placeholder="Search by name or keyword...">
+
+      <div class="filter-group">
+        <span class="filter-label">Organization Type</span>
+        <div class="filter-options">
+          <label><input type="checkbox" name="type" value="ministry" checked> Ministry</label>
+          <label><input type="checkbox" name="type" value="department" checked> Department</label>
+          <label><input type="checkbox" name="type" value="provincial" checked> Provincial Council</label>
+          <label><input type="checkbox" name="type" value="statutory" checked> Statutory Board / Corporation</label>
+          <label><input type="checkbox" name="type" value="secretariat"> Secretariat / Commission</label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Sector</span>
+        <div class="filter-options">
+          <label><input type="radio" name="sector" value="all" checked> All Sectors</label>
+          <label><input type="radio" name="sector" value="admin"> Public Administration</label>
+          <label><input type="radio" name="sector" value="finance"> Finance & Economy</label>
+          <label><input type="radio" name="sector" value="health"> Health & Welfare</label>
+          <label><input type="radio" name="sector" value="education"> Education</label>
+          <label><input type="radio" name="sector" value="agri"> Agriculture & Environment</label>
+        </div>
+      </div>
+    </aside>
+
+    <section class="content-area">
+      <div class="alpha-index" aria-label="Alphabetical index">
+        <a href="#" class="active">A</a><a href="#">B</a><a href="#">C</a><a href="#">D</a><a href="#">E</a><a href="#">F</a><a href="#">G</a><a href="#">H</a><a href="#">I</a><a href="#">J</a><a href="#">K</a><a href="#">L</a><a href="#">M</a><a href="#">N</a><a href="#">O</a><a href="#">P</a><a href="#">Q</a><a href="#">R</a><a href="#">S</a><a href="#">T</a><a href="#">U</a><a href="#">V</a><a href="#">W</a><a href="#">X</a><a href="#">Y</a><a href="#">Z</a>
+      </div>
+
+      <h2 class="visually-hidden">Results for 'A'</h2>
+
+      <div class="org-list">
+        <!-- Org Card 1 -->
+        <article class="org-card">
+          <div class="org-card-header">
+            <h3>Department for Registration of Persons</h3>
+            <span class="org-type-badge">Department</span>
+          </div>
+          <p>Responsible for the registration of citizens and the issuance of National Identity Cards (NICs) in Sri Lanka, maintaining the national registry.</p>
+          <div class="org-meta">
+            <div><span>📍</span> <span>"Suhurupaya", Subhuthipura Road, Battaramulla</span></div>
+            <div><span>☎</span> <span>011 2 862 238</span></div>
+            <div><span>🌐</span> <span><a href="http://www.drp.gov.lk" target="_blank" rel="noopener">www.drp.gov.lk</a></span></div>
+          </div>
+          <div class="org-actions">
+            <a href="service_details.html" class="btn-small">View Services (6)</a>
+            <a href="#" class="btn-small">Full Details</a>
+          </div>
+        </article>
+
+        <!-- Org Card 2 -->
+        <article class="org-card">
+          <div class="org-card-header">
+            <h3>Department of Agriculture</h3>
+            <span class="org-type-badge">Department</span>
+          </div>
+          <p>Focused on the development and dissemination of agricultural technology, seed certification, and ensuring national food security through sustainable farming practices.</p>
+          <div class="org-meta">
+            <div><span>📍</span> <span>P.O. Box 01, Peradeniya</span></div>
+            <div><span>☎</span> <span>081 2 388 331</span></div>
+            <div><span>🌐</span> <span><a href="http://www.doa.gov.lk" target="_blank" rel="noopener">www.doa.gov.lk</a></span></div>
+          </div>
+          <div class="org-actions">
+            <a href="#" class="btn-small">View Services (12)</a>
+            <a href="#" class="btn-small">Full Details</a>
+          </div>
+        </article>
+
+        <!-- Org Card 3 -->
+        <article class="org-card">
+          <div class="org-card-header">
+            <h3>Ministry of Agriculture and Plantation Industries</h3>
+            <span class="org-type-badge">Ministry</span>
+          </div>
+          <p>Formulates policies and directs strategies for the agricultural and plantation sectors to enhance productivity and export earnings.</p>
+          <div class="org-meta">
+            <div><span>📍</span> <span>80/5, "Govijana Mandiraya", Rajamalwatta Avenue, Battaramulla</span></div>
+            <div><span>☎</span> <span>011 2 868 920</span></div>
+            <div><span>🌐</span> <span><a href="http://www.agrimin.gov.lk" target="_blank" rel="noopener">www.agrimin.gov.lk</a></span></div>
+          </div>
+          <div class="org-actions">
+            <a href="#" class="btn-small">View Departments (8)</a>
+            <a href="#" class="btn-small">Full Details</a>
+          </div>
+        </article>
+        
+        <!-- Org Card 4 -->
+        <article class="org-card">
+          <div class="org-card-header">
+            <h3>Department of Ayurveda</h3>
+            <span class="org-type-badge">Department</span>
+          </div>
+          <p>Regulates and promotes indigenous medicine systems (Ayurveda, Siddha, Unani) and manages Ayurvedic hospitals and dispensaries across the island.</p>
+          <div class="org-meta">
+            <div><span>📍</span> <span>Old Kottawa Road, Navinna, Maharagama</span></div>
+            <div><span>☎</span> <span>011 2 850 302</span></div>
+            <div><span>🌐</span> <span><a href="http://www.ayurveda.gov.lk" target="_blank" rel="noopener">www.ayurveda.gov.lk</a></span></div>
+          </div>
+          <div class="org-actions">
+            <a href="#" class="btn-small">View Services (4)</a>
+            <a href="#" class="btn-small">Full Details</a>
+          </div>
+        </article>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">Government Information Centre</div>
+      <p>The citizen's single point of contact for Sri Lankan government information and services, operated in accordance with ICTA's Guidelines for Developing Sri Lanka Government Websites.</p>
+      <div class="footer-social" aria-label="Social media">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="organizations_directory.html">Organizations</a></li>
+        <li><a href="services_a_z.html">Services</a></li>
+        <li><a href="gov_forms.html">Gov Forms</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">Tenders</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">About the GIC</a></li>
+        <li><a href="#">News &amp; press</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Sitemap</a></li>
+        <li><a href="#">Accessibility statement</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Copyright notice</a></li>
+        <li><a href="#">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Government Information Centre, Sri Lanka. Content licensed for reuse per our copyright notice.</span>
+    <span>Built to ICTA Guidelines for Developing Sri Lanka Government Websites v4.0 · WCAG 2.1 AA</span>
+  </div>
+</footer>
+
+<script>
+// Shared Interactions
+document.addEventListener('DOMContentLoaded', () => {
+  // Language switch
+  const langButtons = document.querySelectorAll('.lang-switch button');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      langButtons.forEach(b => b.setAttribute('aria-current', 'false'));
+      btn.setAttribute('aria-current', 'true');
+    });
+  });
+
+  // Accessibility controls
+  const body = document.body;
+  const sizeUp = document.getElementById('a11y-size-up');
+  const sizeUpMore = document.getElementById('a11y-size-up-more');
+  const sizeReset = document.getElementById('a11y-size-reset');
+  const contrastToggle = document.getElementById('a11y-contrast');
+
+  sizeUp?.addEventListener('click', () => { body.classList.remove('a11y-larger-text'); body.classList.toggle('a11y-large-text'); });
+  sizeUpMore?.addEventListener('click', () => { body.classList.remove('a11y-large-text'); body.classList.toggle('a11y-larger-text'); });
+  sizeReset?.addEventListener('click', () => { body.classList.remove('a11y-large-text', 'a11y-larger-text'); });
+  contrastToggle?.addEventListener('click', () => { body.classList.toggle('a11y-high-contrast'); });
+
+  // No JS needed for dropdown — pure CSS :hover handles it
+});
+</script>
+</body>
+</html>
