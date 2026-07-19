@@ -127,6 +127,20 @@ button { font-family: inherit; cursor: pointer; }
 .index-list a:hover { color: var(--teal); text-decoration: underline; }
 .index-list .org-name { display: block; font-size: .8rem; color: var(--ink-soft); margin-top: 2px; font-weight: 400; }
 
+/* Downloads / events */
+.dl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.dl-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-m); padding: 18px;
+  display: flex; gap: 14px; align-items: flex-start; transition: transform .2s ease, box-shadow .2s ease;
+}
+.dl-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-m); }
+.dl-icon {
+  width: 38px; height: 38px; border-radius: var(--radius-s); background: var(--accent-soft); color: var(--accent);
+  display: flex; align-items: center; justify-content: center; font-weight: 800; flex: none;
+}
+.dl-card h4 { font-size: .95rem; margin-bottom: 2px; }
+.dl-card span { font-size: .76rem; color: var(--ink-soft); }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--primary-dark); color: #C7D5E3; padding-top: 56px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px; padding-bottom: 36px; }
@@ -137,6 +151,7 @@ button { font-family: inherit; cursor: pointer; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding: 18px 0; font-size: .78rem; color: #8FA3B8; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
 @media (max-width: 768px) {
+  .dl-grid { grid-template-columns: 1fr; }
   .index-section { grid-template-columns: 1fr; gap: 16px; }
   .index-letter { border-right: none; border-bottom: 2px solid var(--line); padding-right: 0; padding-bottom: 8px; text-align: left; font-size: 2.2rem; }
   .index-list { columns: 1; }
@@ -234,67 +249,49 @@ button { font-family: inherit; cursor: pointer; }
 </header>
 
 <main id="main">
-  <header class="page-header" style="background: linear-gradient(135deg, rgba(14,58,95,0.9), rgba(9,42,70,0.95)), url('assests/services_hero.png') center/cover;">
+  <header class="page-header" style="background: linear-gradient(135deg, rgba(14,58,95,0.9), rgba(9,42,70,0.95)), url('assests/help_hero.png') center/cover;">
     <div class="container">
       <nav aria-label="Breadcrumb" class="breadcrumb">
         <a href="index.html">Home</a> &rsaquo;
-        <span aria-current="page">Services A-Z</span>
+        <span aria-current="page">Help & Support</span>
       </nav>
-      <h1>A-Z Index of Services</h1>
+      <h1>Help & Support</h1>
+      <p style="max-width: 600px; margin-top: 10px; font-size: 1.05rem;">We are here to assist you 7 days a week, 365 days a year. Find answers to common questions below.</p>
     </div>
   </header>
 
-  <div class="container page-layout">
+  <div class="container page-layout" style="display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start;">
     
-    <nav class="az-nav" aria-label="Alphabetical navigation">
-      <a href="#A" class="active">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a><a href="#F">F</a><a href="#G">G</a><a href="#H">H</a><a href="#I">I</a><a href="#J" class="disabled">J</a><a href="#K" class="disabled">K</a><a href="#L">L</a><a href="#M">M</a><a href="#N">N</a><a href="#O">O</a><a href="#P">P</a><a href="#Q" class="disabled">Q</a><a href="#R">R</a><a href="#S">S</a><a href="#T">T</a><a href="#U" class="disabled">U</a><a href="#V">V</a><a href="#W">W</a><a href="#X" class="disabled">X</a><a href="#Y" class="disabled">Y</a><a href="#Z" class="disabled">Z</a>
-    </nav>
-
-    <div class="index-sections">
+    <div>
+      <h2 style="color: var(--primary); margin-bottom: 24px;">Frequently Asked Questions</h2>
       
-      <section id="A" class="index-section">
-        <div class="index-letter" aria-hidden="true">A</div>
-        <ul class="index-list">
-          <li><a href="#">Adoption of Children <span class="org-name">Department of Probation and Child Care Services</span></a></li>
-          <li><a href="#">Agricultural Equipment Subsidy <span class="org-name">Department of Agriculture</span></a></li>
-          <li><a href="#">Alienation of Crown Land <span class="org-name">Land Commissioner General's Department</span></a></li>
-          <li><a href="service_details.html">Application for a National Identity Card <span class="org-name">Department for Registration of Persons</span></a></li>
-          <li><a href="#">Application for a Passport <span class="org-name">Department of Immigration & Emigration</span></a></li>
-          <li><a href="#">Approval of Building Plans <span class="org-name">Urban Development Authority</span></a></li>
-          <li><a href="#">Ayurvedic Medical Council Registration <span class="org-name">Department of Ayurveda</span></a></li>
-        </ul>
-      </section>
+      <div style="border: 1px solid var(--line); border-radius: var(--radius-m); background: #fff; margin-bottom: 16px; padding: 20px;">
+        <h3 style="font-size: 1.1rem; color: var(--ink); margin-bottom: 10px;">What are the operating hours for the 1919 hotline?</h3>
+        <p style="color: var(--ink-soft); font-size: .95rem; margin: 0; line-height: 1.5;">The 1919 hotline operates from 8.00 am to 8.00 pm, 365 days of the year, providing support in Sinhala, Tamil, and English.</p>
+      </div>
 
-      <section id="B" class="index-section">
-        <div class="index-letter" aria-hidden="true">B</div>
-        <ul class="index-list">
-          <li><a href="#">Birth Certificate (Applying for a Copy) <span class="org-name">Registrar General's Department</span></a></li>
-          <li><a href="#">Business Name Registration <span class="org-name">Department of Registrar of Companies</span></a></li>
-          <li><a href="#">Bursary Applications for University Students <span class="org-name">University Grants Commission</span></a></li>
-        </ul>
-      </section>
+      <div style="border: 1px solid var(--line); border-radius: var(--radius-m); background: #fff; margin-bottom: 16px; padding: 20px;">
+        <h3 style="font-size: 1.1rem; color: var(--ink); margin-bottom: 10px;">How do I translate a page?</h3>
+        <p style="color: var(--ink-soft); font-size: .95rem; margin: 0; line-height: 1.5;">Simply click the Sinhala, Tamil, or English buttons located at the top right of the navigation bar to instantly translate the entire page.</p>
+      </div>
 
-      <section id="C" class="index-section">
-        <div class="index-letter" aria-hidden="true">C</div>
-        <ul class="index-list">
-          <li><a href="#">Change of Name (Deed Poll) <span class="org-name">Registrar General's Department</span></a></li>
-          <li><a href="#">Citizenship Certificates <span class="org-name">Department of Immigration & Emigration</span></a></li>
-          <li><a href="#">Company Registration <span class="org-name">Department of Registrar of Companies</span></a></li>
-          <li><a href="#">Consumer Complaints <span class="org-name">Consumer Affairs Authority</span></a></li>
-          <li><a href="#">Customs Clearance for Imports <span class="org-name">Sri Lanka Customs</span></a></li>
-        </ul>
-      </section>
-      
-      <section id="D" class="index-section">
-        <div class="index-letter" aria-hidden="true">D</div>
-        <ul class="index-list">
-          <li><a href="#">Death Certificate (Applying for a Copy) <span class="org-name">Registrar General's Department</span></a></li>
-          <li><a href="#">Driving Licence (New / Renewal) <span class="org-name">Department of Motor Traffic</span></a></li>
-          <li><a href="#">Dual Citizenship <span class="org-name">Department of Immigration & Emigration</span></a></li>
-        </ul>
-      </section>
-
+      <div style="border: 1px solid var(--line); border-radius: var(--radius-m); background: #fff; margin-bottom: 16px; padding: 20px;">
+        <h3 style="font-size: 1.1rem; color: var(--ink); margin-bottom: 10px;">Are all government services available online?</h3>
+        <p style="color: var(--ink-soft); font-size: .95rem; margin: 0; line-height: 1.5;">Many services have digital forms available on our <a href="gov_forms.html" style="color: var(--teal); font-weight: 600;">Gov Forms</a> page. However, some critical processes (like fingerprinting for passports) still require an in-person visit.</p>
+      </div>
     </div>
+
+    <div>
+      <div style="background: var(--paper-2); padding: 24px; border-radius: var(--radius-m); position: sticky; top: 20px;">
+        <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 16px;">Contact Us</h3>
+        <p style="font-size: .9rem; color: var(--ink-soft); margin-bottom: 20px;">Need immediate assistance? Our support agents are ready to help.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <a href="tel:1919" style="background: var(--accent); color: var(--primary-dark); padding: 12px; border-radius: var(--radius-s); text-align: center; font-weight: 700;">☎ Call 1919</a>
+          <a href="mailto:info@gic.gov.lk" style="border: 1px solid var(--primary); color: var(--primary); padding: 12px; border-radius: var(--radius-s); text-align: center; font-weight: 600;">✉ info@gic.gov.lk</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </main>
 
